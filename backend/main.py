@@ -6,9 +6,13 @@ from google.genai import types
 import json, re
 from typing import List
 import io
+import os
+from dotenv import load_dotenv
 from pdfminer.high_level import extract_text
 
-client = genai.Client(api_key="AIzaSyC_F5fFt7Z0iyVRAJ6tvu7JyzaMPXmRoqM")
+load_dotenv()  
+
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Modelos de dados
 class Email(BaseModel):
