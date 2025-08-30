@@ -96,9 +96,11 @@ export default function EmailResult({ result }) {
               {copied ? t("result.copied") : t("result.copy")}
             </button>
           </div>
-          <p className="text-base text-white/90 leading-relaxed whitespace-pre-wrap font-normal">
-            {result.texto}
-          </p>
+          <div className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
+            <p className="text-base text-white/90 leading-relaxed whitespace-pre-wrap font-normal">
+              {result.texto}
+            </p>
+          </div>
         </div>
       </div>
 
