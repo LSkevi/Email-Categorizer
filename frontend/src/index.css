@@ -112,26 +112,31 @@ button:focus-visible {
 /* Mobile optimizations */
 @media (max-width: 768px) {
   /* Improve touch targets */
-  button, a, input, textarea {
+  button,
+  a,
+  input,
+  textarea {
     min-height: 44px; /* Minimum touch target size */
   }
-  
+
   /* Better text sizing on mobile */
   html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
-  
+
   /* Improve scrolling performance */
   * {
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Prevent zoom on input focus */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-size: 16px !important;
   }
-  
+
   /* Better touch interaction */
   .touch-manipulation {
     touch-action: manipulation;
