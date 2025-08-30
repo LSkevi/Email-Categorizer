@@ -44,12 +44,10 @@ const HistoryItem = memo(
       <div className="border-t border-white/5 hover:bg-white/5 transition-colors group">
         <div className="flex items-start gap-3 p-2.5">
           <ClassificationBall value={item.classificacao} />
-          
+
           <button onClick={handleSelect} className="flex-1 text-left min-w-0">
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-white/40">
-                {formattedDate}
-              </span>
+              <span className="text-xs text-white/40">{formattedDate}</span>
             </div>
 
             {/* Email content */}

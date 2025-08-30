@@ -22,12 +22,14 @@ An AI-powered email classification system that categorizes emails as **Productiv
 ## 🛠️ Tech Stack
 
 ### Backend
+
 - **FastAPI** - Modern Python web framework
 - **Google Gemini AI** - For email classification and response generation
 - **Pydantic** - Data validation
 - **PDFMiner** - PDF text extraction
 
 ### Frontend
+
 - **React 18** - Modern UI library
 - **Vite** - Fast build tool
 - **Tailwind CSS** - Utility-first CSS framework
@@ -44,12 +46,14 @@ An AI-powered email classification system that categorizes emails as **Productiv
 ### Backend Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/LSkevi/Email-Categorizer.git
    cd Email-Categorizer/backend
    ```
 
 2. **Create virtual environment**
+
    ```bash
    python -m venv .venv
    .venv\Scripts\activate  # Windows
@@ -57,11 +61,13 @@ An AI-powered email classification system that categorizes emails as **Productiv
    ```
 
 3. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Set up environment variables**
+
    ```bash
    # Create .env file
    echo GEMINI_API_KEY=your_gemini_api_key_here > .env
@@ -77,11 +83,13 @@ The API will be available at `http://localhost:8000`
 ### Frontend Setup
 
 1. **Navigate to frontend directory**
+
    ```bash
    cd ../frontend
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -126,6 +134,7 @@ The frontend will be available at `http://localhost:5173`
 ### Example Usage
 
 **Classify Text:**
+
 ```bash
 curl -X POST "https://your-api.render.com/classificar" \
      -H "Content-Type: application/json" \
@@ -133,6 +142,7 @@ curl -X POST "https://your-api.render.com/classificar" \
 ```
 
 **Response:**
+
 ```json
 {
   "classificacao": "Produtivo",
@@ -153,12 +163,14 @@ curl -X POST "https://your-api.render.com/classificar" \
 ## 🔧 Environment Variables
 
 ### Backend (.env)
+
 ```
 GEMINI_API_KEY=your_gemini_api_key_here
 ENVIRONMENT=development
 ```
 
 ### Frontend (.env.local)
+
 ```
 VITE_API_URL=http://127.0.0.1:8000
 ```
