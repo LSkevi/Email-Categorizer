@@ -11,7 +11,7 @@ This solution automates email classification for financial companies, categorizi
 ## ✨ Key Features
 
 - **🤖 AI Classification**: Advanced email categorization using Google Gemini AI
-- **📁 File Support**: Upload .txt, .pdf files or paste email content directly  
+- **📁 File Support**: Upload .txt, .pdf files or paste email content directly
 - **🌐 Multilingual**: Full Portuguese and English support with auto-detection
 - **💬 Smart Responses**: AI-generated professional response suggestions
 - **📊 History Tracking**: Persistent classification history with timestamps
@@ -21,12 +21,14 @@ This solution automates email classification for financial companies, categorizi
 ## 🛠️ Tech Stack
 
 **Frontend**
+
 - React 18 with modern hooks
 - Tailwind CSS for styling
 - i18next for internationalization
 - Vite for fast development
 
-**Backend**  
+**Backend**
+
 - FastAPI for high-performance APIs
 - Google Gemini AI for classification
 - PDFMiner for document processing
@@ -97,14 +99,18 @@ npm run dev
 ## 🎯 Classification Categories
 
 ### Productive
+
 Emails requiring action or specific response:
+
 - Technical support requests
 - Case status updates
 - System inquiries
 - Business and client matters
 
 ### Unproductive
+
 Emails not requiring immediate action:
+
 - Congratulatory messages
 - Thank you notes
 - Personal messages
@@ -140,6 +146,7 @@ Email-Categorizer/
 ## 🔧 Available Scripts
 
 ### Frontend
+
 ```bash
 npm run dev          # Development server
 npm run build        # Production build
@@ -147,6 +154,7 @@ npm run preview      # Preview build
 ```
 
 ### Backend
+
 ```bash
 python -m uvicorn main:app --reload              # Development
 python -m uvicorn main:app --host 0.0.0.0 --port $PORT  # Production
@@ -155,11 +163,13 @@ python -m uvicorn main:app --host 0.0.0.0 --port $PORT  # Production
 ## 🌐 Deployment
 
 ### Frontend (Vercel)
+
 1. Connect repository to Vercel
 2. Set root directory to `frontend`
 3. Deploy automatically
 
 ### Backend (Render)
+
 1. Configure environment variables
 2. Use command: `python -m uvicorn main:app --host 0.0.0.0 --port $PORT`
 
