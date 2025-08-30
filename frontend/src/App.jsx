@@ -80,8 +80,8 @@ export default function App() {
   const hasHistory = useMemo(() => history.length > 0, [history.length]);
 
   return (
-    <div className="fixed inset-0 bg-[#0F172A] bg-gradient-to-b from-[#0F172A] via-[#0B1221] to-[#0F172A] flex items-center justify-center p-3">
-      <div className="relative w-full max-w-6xl">
+    <div className="min-h-screen bg-[#0F172A] bg-gradient-to-b from-[#0F172A] via-[#0B1221] to-[#0F172A] py-6 px-3">
+      <div className="relative w-full max-w-6xl mx-auto">
         {/* Decorative elements */}
         <div className="absolute -z-10 blur-[50px] bg-gradient-to-r from-[#38BDF8]/25 to-[#38BDF8]/10 w-full h-full" />
 
