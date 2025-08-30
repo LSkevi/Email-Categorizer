@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -11,24 +11,26 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
+    console.error("Error caught by boundary:", error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ 
-          padding: '20px', 
-          backgroundColor: '#fee', 
-          color: '#c00',
-          fontFamily: 'monospace',
-          whiteSpace: 'pre-wrap'
-        }}>
+        <div
+          style={{
+            padding: "20px",
+            backgroundColor: "#fee",
+            color: "#c00",
+            fontFamily: "monospace",
+            whiteSpace: "pre-wrap",
+          }}
+        >
           <h2>Something went wrong!</h2>
           <details>
             <summary>Error details</summary>
             <p>{this.state.error?.toString()}</p>
-            <p>API URL: {import.meta.env.VITE_API_URL || 'Not set'}</p>
+            <p>API URL: {import.meta.env.VITE_API_URL || "Not set"}</p>
             <p>Environment: {import.meta.env.MODE}</p>
           </details>
         </div>

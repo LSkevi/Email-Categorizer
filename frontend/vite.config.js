@@ -9,10 +9,10 @@ export default defineConfig({
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    sourcemap: true
+    sourcemap: true,
   },
   server: {
     port: 5173,
-    host: true
-  }
+    host: true,
+  },
 });
