@@ -34,8 +34,9 @@ This solution automates email classification for financial companies, categorizi
 
 ## 🚀 Live Demo
 
-- **Frontend**: [Deployed on Vercel]
+- **Frontend**: https://email-categorizer-one.vercel.app
 - **Backend API**: https://email-categorizer.onrender.com
+- **API Documentation**: https://email-categorizer.onrender.com/docs
 
 ## 📋 Quick Start
 
