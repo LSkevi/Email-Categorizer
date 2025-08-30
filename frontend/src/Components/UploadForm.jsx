@@ -15,10 +15,24 @@ export default function UploadForm({ setResult }) {
     setFile(selectedFile);
 
     try {
-      const content = await selectedFile.text();
-      setTexto(content);
+      // Only read content for text files, PDFs will be processed on the backend
+      if (
+        selectedFile.type === "text/plain" ||
+        selectedFile.name.endsWith(".txt")
+      ) {
+        const content = await selectedFile.text();
+        setTexto(content);
+      } else if (selectedFile.name.endsWith(".pdf")) {
+        // For PDFs, just show a placeholder - backend will process the actual content
+        setTexto(`[PDF File: ${selectedFile.name}]`);
+      } else {
+        // For other text files, try to read as text
+        const content = await selectedFile.text();
+        setTexto(content);
+      }
     } catch (error) {
       console.error("Error reading file:", error);
+      setTexto(`[File: ${selectedFile.name}]`);
     }
   };
 
@@ -43,7 +57,16 @@ export default function UploadForm({ setResult }) {
         }),
         body,
       });
-      setResult(await res.json());
+      const result = await res.json();
+
+      // Add the original email text to the result
+      const resultWithOriginal = {
+        ...result,
+        originalTexto: texto, // Store the original email text
+        sugestao: result.texto, // Store the AI response as suggestion
+      };
+
+      setResult(resultWithOriginal);
     } catch (error) {
       console.error("Error:", error);
     } finally {
@@ -79,7 +102,7 @@ export default function UploadForm({ setResult }) {
             ref={fileInputRef}
             type="file"
             onChange={handleFileChange}
-            accept=".txt,.doc,.docx"
+            accept=".txt,.doc,.docx,.pdf"
             disabled={loading}
             className="w-full file:mr-3 file:py-2 file:px-4 file:rounded-xl
                      file:border-0 file:text-sm file:font-medium 
@@ -106,20 +129,13 @@ export default function UploadForm({ setResult }) {
           )}
         </div>
 
+        {/* Single button that handles both cases */}
         <button
-          onClick={(e) => handleSubmit(e, "text")}
-          disabled={loading || !texto.trim()}
-          className="px-4 py-2 rounded-xl bg-[#38BDF8] hover:bg-[#0EA5E9] text-white font-medium disabled:opacity-50 transition-colors"
+          onClick={(e) => handleSubmit(e, file ? "file" : "text")}
+          disabled={loading || (!texto.trim() && !file)}
+          className="px-6 py-2 rounded-xl bg-[#38BDF8] hover:bg-[#0EA5E9] text-white font-medium disabled:opacity-50 transition-colors"
         >
-          {t("buttons.text")}
-        </button>
-
-        <button
-          onClick={(e) => handleSubmit(e, "file")}
-          disabled={loading || !file}
-          className="px-4 py-2 rounded-xl bg-[#38BDF8] hover:bg-[#0EA5E9] text-white font-medium disabled:opacity-50 transition-colors"
-        >
-          {t("buttons.file")}
+          {file ? t("buttons.analyzeFile") : t("buttons.analyzeText")}
         </button>
       </div>
 

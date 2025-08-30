@@ -37,16 +37,22 @@ app.add_middleware(
 # Função para classificar texto
 def classificar_texto_gemini(texto: str) -> Email:
     prompt = f"""
-    Classifique o email abaixo usando esses parametros e faça uma Sugestão de resposta automática para o email 
+    Primeiro, detecte o idioma do email abaixo e responda SEMPRE no mesmo idioma detectado.
+    
+    Classifique o email usando esses parâmetros:
+    
     Produtivo: Emails que requerem uma ação ou resposta específica (ex.: solicitações de suporte técnico, atualização sobre casos em aberto, dúvidas sobre o sistema, assuntos sobre a empresa e sobre clientes).
-    Improdutivo: Emails que não necessitam de uma ação imediata (ex.: mensagens de felicitações, agradecimentos, mensagens de parentes, qualquer tema que não for sobre negocios).
-    Se for improdutivo, a sugestão de resposta deve ser uma mensagem educada informando que o email não será respondido.
-    Se for produtivo, a sugestão de resposta deve ser uma resposta direta e objetiva ao email.
-    e responda apenas em JSON, no formato:
-
+    Improdutivo: Emails que não necessitam de uma ação imediata (ex.: mensagens de felicitações, agradecimentos, mensagens de parentes, qualquer tema que não for sobre negócios).
+    
+    IMPORTANTE: 
+    - Se for improdutivo, a sugestão de resposta deve ser uma mensagem educada informando que o email não será respondido.
+    - Se for produtivo, a sugestão de resposta deve ser uma resposta direta e objetiva ao email.
+    - SEMPRE responda no mesmo idioma do email original (português, inglês, espanhol, etc.)
+    
+    Responda apenas em JSON, no formato:
     {{
-      "classificacao": "Produtivo ou Improdutivo",
-      "texto": "Sugestão de resposta automática para o email"
+      "classificacao": "Produtivo ou Improdutivo" (sempre em português),
+      "texto": "Sugestão de resposta automática no mesmo idioma do email original"
     }}
 
     Email: {texto}

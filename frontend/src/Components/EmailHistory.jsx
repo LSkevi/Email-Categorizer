@@ -87,9 +87,32 @@ export default function EmailHistory({
                         )}
                       </span>
                     </div>
-                    <p className="text-white/70 text-sm line-clamp-2">
-                      {item.texto}
-                    </p>
+
+                    {/* Original Email */}
+                    <div className="mb-3">
+                      <span className="text-xs font-medium text-[#38BDF8] mb-1 block">
+                        {t("history.originalEmail", "Original Email")}:
+                      </span>
+                      <p className="text-white/70 text-sm line-clamp-2 bg-white/5 rounded-lg p-2">
+                        {item.originalTexto || item.texto}
+                      </p>
+                    </div>
+
+                    {/* Response Suggestion */}
+                    {item.sugestao && (
+                      <div>
+                        <span className="text-xs font-medium text-[#38BDF8] mb-1 block">
+                          {t(
+                            "history.responseSuggestion",
+                            "Response Suggestion"
+                          )}
+                          :
+                        </span>
+                        <p className="text-white/60 text-sm line-clamp-2 bg-white/5 rounded-lg p-2">
+                          {item.sugestao}
+                        </p>
+                      </div>
+                    )}
                   </button>
                   <button
                     onClick={(e) => {

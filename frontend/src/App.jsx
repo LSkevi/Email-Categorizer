@@ -70,7 +70,7 @@ export default function App() {
             {i18n.language === "pt" ? "EN" : "PT"}
           </button>
 
-          <h1 className="text-3xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#38BDF8] to-[#7DD3FC]">
+          <h1 className="text-3xl font-bold mb-4 pb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#38BDF8] to-[#7DD3FC] leading-loose">
             {t("title")}
           </h1>
 

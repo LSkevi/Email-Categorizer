@@ -1,23 +1,187 @@
-# Email Categorizer
+# Smart Email Assistant 🚀
 
-A simple, privacy-aware service that uses Gemini (Google's Generative AI) to categorize emails as "productive" or "not productive", and stores a history of past categorizations. Built with a FastAPI (Python) backend and a React (JavaScript) frontend.
+Uma aplicação web inteligente que utiliza IA para classificar emails automaticamente e sugerir respostas apropriadas, desenvolvida para o processo seletivo da AutoU.
 
-This repository contains the backend API and the frontend UI (or instructions to connect to them). It's intended for anyone who needs automated email triage: developers, personal productivity users, or teams who want a lightweight classifier powered by a Large Language Model.
+## 📋 Sobre o Projeto
+
+O Smart Email Assistant é uma solução digital que automatiza a leitura e classificação de emails em empresas do setor financeiro, liberando tempo da equipe ao eliminar a necessidade de classificação manual.
+
+### 🎯 Funcionalidades Principais
+
+- **Classificação Automática**: Categoriza emails em "Produtivo" ou "Improdutivo"
+- **Sugestões de Resposta**: Gera respostas automáticas inteligentes baseadas no conteúdo
+- **Suporte a Múltiplos Formatos**: Aceita arquivos .txt, .pdf e entrada de texto direto
+- **Detecção de Idioma**: Responde automaticamente no idioma do email original
+- **Histórico Completo**: Salva todas as classificações com timestamp
+- **Interface Multilíngue**: Suporte completo a Português e Inglês
+- **Design Responsivo**: Interface moderna e intuitiva
+
+## 🛠️ Tecnologias Utilizadas
+
+### Frontend
+
+- **React 18** com Hooks
+- **Tailwind CSS** para styling
+- **i18next** para internacionalização
+- **Vite** como bundler
+
+### Backend
+
+- **Python 3.13**
+- **FastAPI** para APIs REST
+- **Google Gemini AI** para classificação e geração de respostas
+- **pdfminer.six** para processamento de PDFs
+- **uvicorn** como servidor ASGI
+
+## 🚀 Como Executar Localmente
+
+### Pré-requisitos
+
+- Node.js 18+
+- Python 3.11+
+- API Key do Google Gemini
+
+### 1. Clone o Repositório
+
+```bash
+git clone https://github.com/LSkevi/Email-Categorizer.git
+cd Email-Categorizer
+```
+
+### 2. Configurar o Backend
+
+```bash
+cd backend
+
+# Instalar dependências
+pip install -r requirements.txt
+
+# Configurar variáveis de ambiente
+# Crie um arquivo .env com:
+GEMINI_API_KEY=sua_api_key_aqui
+
+# Executar o servidor
+python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### 3. Configurar o Frontend
+
+```bash
+cd frontend
+
+# Instalar dependências
+npm install
+
+# Executar o servidor de desenvolvimento
+npm run dev
+```
+
+### 4. Acessar a Aplicação
+
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:8000
+- Documentação da API: http://localhost:8000/docs
+
+## 📖 Como Usar
+
+1. **Upload de Arquivo**: Selecione um arquivo .txt ou .pdf com o conteúdo do email
+2. **Entrada de Texto**: Ou cole/digite o texto do email diretamente
+3. **Análise**: Clique em "Analisar Email" para processar
+4. **Resultados**: Visualize a classificação e sugestão de resposta
+5. **Histórico**: Acesse o histórico no painel lateral para revisar análises anteriores
+
+## 🎯 Categorias de Classificação
+
+### Produtivo
+
+Emails que requerem ação ou resposta específica:
+
+- Solicitações de suporte técnico
+- Atualizações sobre casos em aberto
+- Dúvidas sobre sistemas
+- Assuntos empresariais e clientes
+
+### Improdutivo
+
+Emails que não necessitam ação imediata:
+
+- Mensagens de felicitações
+- Agradecimentos
+- Mensagens pessoais
+- Temas não relacionados a negócios
+
+## 🌟 Diferenciais Técnicos
+
+- **IA Avançada**: Utiliza Google Gemini 2.5 Flash para classificação precisa
+- **Detecção Automática de Idioma**: Respostas no mesmo idioma do email original
+- **Persistência Local**: Histórico salvo no localStorage do navegador
+- **Interface Polida**: Design moderno com glassmorphism e animações
+- **Responsividade**: Funciona perfeitamente em desktop e mobile
+- **Feedback Visual**: Indicadores de loading e estados interativos
+
+## 📱 Estrutura do Projeto
+
+```
+Email-Categorizer/
+├── frontend/                  # Aplicação React
+│   ├── src/
+│   │   ├── Components/       # Componentes React
+│   │   ├── translations/     # Arquivos de tradução
+│   │   └── ...
+│   ├── package.json
+│   └── ...
+├── backend/                   # API FastAPI
+│   ├── main.py              # Arquivo principal da API
+│   ├── requirements.txt     # Dependências Python
+│   └── ...
+└── README.md
+```
+
+## 🔧 Scripts Disponíveis
+
+### Frontend
+
+```bash
+npm run dev          # Servidor de desenvolvimento
+npm run build        # Build para produção
+npm run preview      # Preview do build
+```
+
+### Backend
+
+```bash
+python -m uvicorn main:app --reload    # Servidor de desenvolvimento
+python -m uvicorn main:app --host 0.0.0.0 --port 8000  # Produção
+```
+
+## 🌐 Deploy
+
+### Frontend (Vercel)
+
+1. Conecte seu repositório ao Vercel
+2. Configure o diretório raiz como `frontend`
+3. Deploy automático
+
+### Backend (Railway/Render)
+
+1. Configure as variáveis de ambiente
+2. Use o comando: `python -m uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+## 🤝 Contribuição
+
+Este projeto foi desenvolvido como parte do processo seletivo da AutoU. Sugestões e melhorias são bem-vindas!
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
+
+## 👨‍💻 Desenvolvedor
+
+Desenvolvido com ❤️ para o processo seletivo da AutoU
 
 ---
 
-## Key features
-
-- LLM-powered categorization (Gemini) of email content (subject + body)
-- History of past categorizations with metadata (timestamp, original text, category, model explanation)
-- FastAPI backend exposing REST endpoints and automatic docs (OpenAPI)
-- React frontend for submitting emails and viewing history
-- Configurable storage (default: SQLite for quick setup; easily swap to Postgres)
-- Privacy notes and guidance for handling sensitive data
-
----
-
-## Tech stack
+⭐ **Gostou do projeto? Deixe uma estrela!**
 
 - Backend: Python, FastAPI, Uvicorn (ASGI)
 - LLM: Google Gemini via the Generative AI API (REST)
@@ -39,12 +203,13 @@ Detailed instructions follow.
 ## Backend — FastAPI (Python)
 
 Prerequisites:
+
 - Python 3.10+
 - pip
 - Google Cloud Project with access to the Generative AI / Gemini model (or service account)
 - (Optional) Docker
 
-1) Create a Python virtual environment and install dependencies
+1. Create a Python virtual environment and install dependencies
 
 ```bash
 python -m venv .venv
@@ -57,10 +222,11 @@ pip install -r backend/requirements.txt
 ```
 
 Notes:
+
 - Ensure your backend/requirements.txt includes the libraries your backend needs (examples: fastapi, uvicorn, sqlalchemy, aiosqlite, pydantic, python-dotenv, google-auth, google-auth-httplib2, google-auth-oauthlib, requests). If you want, I can generate a starter requirements.txt for you.
 - If you prefer to install packages individually for development, you can still run `pip install fastapi uvicorn ...` but the requirements file keeps versions consistent.
 
-2) Environment variables
+2. Environment variables
 
 Create a `.env` file in the backend folder (example shown) or set environment variables in your environment:
 
@@ -77,12 +243,14 @@ GOOGLE_API_KEY=YOUR_API_KEY
 ```
 
 Notes:
+
 - Preferred for server-side use: a Google Cloud service account with the correct IAM permissions, set via `GOOGLE_APPLICATION_CREDENTIALS`.
 - Some deployments can use an API key — check your Google Cloud setup and quota.
 
-3) Example backend endpoints
+3. Example backend endpoints
 
 - POST /api/categorize
+
   - Request JSON:
     ```json
     {
@@ -103,12 +271,13 @@ Notes:
     ```
 
 - GET /api/history
+
   - Returns list of previous categorizations (paginated)
 
 - GET /api/history/{id}
   - Return single entry details
 
-4) Example categorize flow (server-side) — Python snippet calling Google Generative API
+4. Example categorize flow (server-side) — Python snippet calling Google Generative API
 
 ```python
 # backend/gemini_client.py (example)
@@ -136,7 +305,7 @@ def call_gemini(prompt: str, model: str = "text-bison-001"):
     return r.json()
 ```
 
-5) Example categorize logic (pseudo)
+5. Example categorize logic (pseudo)
 
 - Build a prompt that instructs the model to decide if the email is productive:
   - Provide context, explicit instruction, and a JSON-only response schema to parse reliably.
@@ -151,7 +320,7 @@ Email subject: "..."
 Email body: "..."
 ```
 
-6) Run backend
+6. Run backend
 
 ```bash
 uvicorn backend.main:app --reload --host 0.0.0.0 --port ${PORT:-8000}
@@ -164,10 +333,11 @@ The FastAPI interactive docs will be available at http://localhost:8000/docs
 ## Frontend — React (JavaScript)
 
 Prerequisites:
+
 - Node.js >=16
 - npm or yarn
 
-1) Install
+1. Install
 
 ```bash
 cd frontend
@@ -176,7 +346,7 @@ npm install
 yarn
 ```
 
-2) Environment
+2. Environment
 
 Create `.env` in the frontend folder:
 
@@ -184,7 +354,7 @@ Create `.env` in the frontend folder:
 REACT_APP_API_URL=http://localhost:8000/api
 ```
 
-3) Start dev server
+3. Start dev server
 
 ```bash
 npm start
@@ -192,13 +362,13 @@ npm start
 yarn start
 ```
 
-4) UI overview
+4. UI overview
 
 - Form to input subject + body and submit for categorization
 - History view listing past categorizations
 - Detail view showing explanation and raw model output
 
-5) Example client request (fetch)
+5. Example client request (fetch)
 
 ```javascript
 // src/api.js
@@ -208,7 +378,7 @@ export async function categorizeEmail(subject, body) {
   const res = await fetch(`${API_URL}/categorize`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ subject, body })
+    body: JSON.stringify({ subject, body }),
   });
   return res.json();
 }
@@ -269,6 +439,7 @@ Simple Dockerfile examples are provided in /docker for backend and frontend. Bui
 ## Contribution
 
 Contributions are welcome. Suggested workflow:
+
 1. Fork the repo
 2. Create a feature branch
 3. Run tests, add documentation
@@ -303,4 +474,4 @@ Add an ISSUE_TEMPLATE and PR_TEMPLATE to guide contributors.
 
 ---
 
-Thank you for building with this stack! This README gives you a full setup path to get the Email Categorizer running locally and explains how Gemini is integrated.  
+Thank you for building with this stack! This README gives you a full setup path to get the Email Categorizer running locally and explains how Gemini is integrated.
