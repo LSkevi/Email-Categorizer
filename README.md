@@ -1,52 +1,43 @@
-# Smart Email Assistant 🚀
+# Smart Email Categorizer 🚀
 
-Uma aplicação web inteligente que utiliza IA para classificar emails automaticamente e sugerir respostas apropriadas, desenvolvida para o processo seletivo da AutoU.
+> **AutoU Case Study - AI-Powered Email Classification System**
 
-## 📋 Sobre o Projeto
+An intelligent web application that automatically classifies emails and suggests appropriate responses using Google Gemini AI.
 
-O Smart Email Assistant é uma solução digital que automatiza a leitura e classificação de emails em empresas do setor financeiro, liberando tempo da equipe ao eliminar a necessidade de classificação manual.
+## 🎯 Project Overview
 
-### 🎯 Funcionalidades Principais
+This solution automates email classification for financial companies, categorizing emails as **Productive** (requiring action) or **Unproductive** (informational), and generating smart response suggestions to improve team efficiency.
 
-- **Classificação Automática**: Categoriza emails em "Produtivo" ou "Improdutivo"
-- **Sugestões de Resposta**: Gera respostas automáticas inteligentes baseadas no conteúdo
-- **Suporte a Múltiplos Formatos**: Aceita arquivos .txt, .pdf e entrada de texto direto
-- **Detecção de Idioma**: Responde automaticamente no idioma do email original
-- **Histórico Completo**: Salva todas as classificações com timestamp
-- **Interface Multilíngue**: Suporte completo a Português e Inglês
-- **Design Responsivo**: Interface moderna e intuitiva
+## ✨ Key Features
 
-## 🛠️ Tecnologias Utilizadas
+- **🤖 AI Classification**: Advanced email categorization using Google Gemini AI
+- **📁 File Support**: Upload .txt, .pdf files or paste email content directly  
+- **🌐 Multilingual**: Full Portuguese and English support with auto-detection
+- **💬 Smart Responses**: AI-generated professional response suggestions
+- **📊 History Tracking**: Persistent classification history with timestamps
+- **🎨 Modern UI**: Responsive, professional interface built with React
+- **☁️ Cloud Ready**: Deployed on Vercel (frontend) and Render (backend)
 
-### Frontend
+## 🛠️ Tech Stack
 
-- **React 18** com Hooks
-- **Tailwind CSS** para styling
-- **i18next** para internacionalização
-- **Vite** como bundler
+**Frontend**
+- React 18 with modern hooks
+- Tailwind CSS for styling
+- i18next for internationalization
+- Vite for fast development
 
-### Backend
+**Backend**  
+- FastAPI for high-performance APIs
+- Google Gemini AI for classification
+- PDFMiner for document processing
+- Python 3.11+ with type hints
 
-- **Python 3.13**
-- **FastAPI** para APIs REST
-- **Google Gemini AI** para classificação e geração de respostas
-- **pdfminer.six** para processamento de PDFs
-- **uvicorn** como servidor ASGI
+## 🚀 Live Demo
 
-## 🚀 Como Executar Localmente
+- **Frontend**: [Deployed on Vercel]
+- **Backend API**: https://email-categorizer.onrender.com
 
-### Pré-requisitos
-
-- Node.js 18+
-- Python 3.11+
-- API Key do Google Gemini
-
-### 1. Clone o Repositório
-
-```bash
-git clone https://github.com/LSkevi/Email-Categorizer.git
-cd Email-Categorizer
-```
+## 📋 Quick Start
 
 ### 2. Configurar o Backend
 
