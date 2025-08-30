@@ -1,6 +1,7 @@
 export default {
-  title: "Smart Email Assistant",
+  title: "Email Classification System",
   textarea: "Paste your email text here...",
+  fileSelected: "Remove the file to change text",
   buttons: {
     text: "Text",
     file: "File",
@@ -22,5 +23,36 @@ export default {
     empty: "No emails classified yet",
     originalEmail: "Original Email",
     responseSuggestion: "Response Suggestion",
+    delete: "Delete",
+  },
+  classifications: {
+    produtivo: "Productive",
+    improdutivo: "Unproductive",
+    erro: "Error",
+    desconhecido: "Unknown",
+    productive: "Productive",
+    unproductive: "Unproductive",
+  },
+  instructions: {
+    title: "How to Use This System",
+    mainFeature: "Email Classification",
+    mainFeatureDesc:
+      "This AI-powered system analyzes your emails and classifies them as either productive (business-relevant) or unproductive (spam, personal, irrelevant) to help you prioritize your workflow.",
+    howToUse: "How to Use",
+    step1:
+      "Paste your email text in the text area OR upload a file (.txt, .pdf)",
+    step2: "Click 'Analyze Email' to get instant AI classification",
+    step3: "View the result with suggested professional responses",
+    classifications: "Classification Types",
+    productiveDesc: "Business-relevant, important emails requiring attention",
+    unproductiveDesc: "Spam, personal, or irrelevant emails",
+    features: "Key Features",
+    feature1: "Real-time AI analysis using Google Gemini",
+    feature2: "Automatic email history with classification tracking",
+    feature3: "Professional response suggestions for productive emails",
+    feature4: "Multi-language support (English/Portuguese)",
+    tip: "Pro Tip",
+    tipDesc:
+      "Use the history to track your email productivity patterns and quickly revisit important classifications.",
   },
 };
