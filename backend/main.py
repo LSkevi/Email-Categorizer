@@ -24,13 +24,8 @@ GEMINI_MODEL = "gemini-2.5-flash"
 SUPPORTED_FILE_TYPES = {".txt", ".pdf"}
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
 
-# CORS origins - includes production URLs
-CORS_ORIGINS = [
-    "http://localhost:5173",
-    "http://localhost:3000", 
-    "https://*.vercel.app",
-    "https://*.netlify.app"
-]
+# CORS origins - allow all for testing
+CORS_ORIGINS = ["*"]
 
 # Initialize Gemini client
 try:
