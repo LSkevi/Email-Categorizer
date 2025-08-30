@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import UploadForm from "./Components/UploadForm";
 import EmailResult from "./Components/EmailResult";
-import EmailHistory from "./components/EmailHistory";
+import EmailHistory from "./Components/EmailHistory";
 import Instructions from "./Components/Instructions";
 import "./i18n";
 
