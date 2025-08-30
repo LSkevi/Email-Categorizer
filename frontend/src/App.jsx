@@ -80,21 +80,22 @@ export default function App() {
   const hasHistory = useMemo(() => history.length > 0, [history.length]);
 
   return (
-    <div className="min-h-screen bg-[#0F172A] bg-gradient-to-b from-[#0F172A] via-[#0B1221] to-[#0F172A] py-6 px-3">
+    <div className="min-h-screen bg-[#0F172A] bg-gradient-to-b from-[#0F172A] via-[#0B1221] to-[#0F172A] py-3 px-2 sm:py-6 sm:px-3">
       <div className="relative w-full max-w-6xl mx-auto">
         {/* Decorative elements */}
         <div className="absolute -z-10 blur-[50px] bg-gradient-to-r from-[#38BDF8]/25 to-[#38BDF8]/10 w-full h-full" />
 
         {/* Main content */}
-        <div className="relative bg-white/10 backdrop-blur-2xl rounded-2xl p-4 border border-white/10 shadow-xl">
+        <div className="relative bg-white/10 backdrop-blur-2xl rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/10 shadow-xl">
           {/* Header buttons */}
-          <div className="absolute top-4 right-4 flex items-center gap-2">
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center gap-1.5 sm:gap-2">
             {/* Instructions button */}
             <button
               onClick={openInstructions}
-              className="px-3 py-1.5 rounded-lg 
+              className="px-2.5 py-1.5 sm:px-3 rounded-lg 
                        bg-white/5 hover:bg-white/10 transition-all
-                       text-white/80 hover:text-white text-sm font-medium"
+                       text-white/80 hover:text-white text-sm font-medium
+                       touch-manipulation"
               title="Instructions"
             >
               ?
@@ -103,22 +104,23 @@ export default function App() {
             {/* Language switch button */}
             <button
               onClick={toggleLanguage}
-              className="px-3 py-1.5 rounded-lg 
+              className="px-2.5 py-1.5 sm:px-3 rounded-lg 
                        bg-white/5 hover:bg-white/10 transition-all
-                       text-white/80 text-sm font-medium"
+                       text-white/80 text-sm font-medium
+                       touch-manipulation"
             >
               {i18n.language === "pt" ? "EN" : "PT"}
             </button>
           </div>
 
-          <h1 className="text-4xl font-semibold mb-6 pb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#38BDF8] to-[#7DD3FC] tracking-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 pb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#38BDF8] to-[#7DD3FC] tracking-tight pr-20 sm:pr-0">
             {t("title")}
           </h1>
 
-          {/* Two-column layout: left (form + result), right (history) */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            <div className="lg:col-span-2 flex flex-col gap-4">
-              <div className="w-full bg-white/5 hover:bg-white/10 transition-all duration-300 rounded-xl p-4 backdrop-blur-md shadow-lg border border-white/5">
+          {/* Mobile-first layout: stack on mobile, side-by-side on lg+ */}
+          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-3 sm:gap-4">
+            <div className="lg:col-span-2 flex flex-col gap-3 sm:gap-4">
+              <div className="w-full bg-white/5 hover:bg-white/10 transition-all duration-300 rounded-xl p-3 sm:p-4 backdrop-blur-md shadow-lg border border-white/5">
                 <UploadForm setResult={handleResult} />
               </div>
 
@@ -129,12 +131,12 @@ export default function App() {
               )}
             </div>
 
-            <aside className="w-full lg:sticky lg:top-4 self-start">
+            <aside className="w-full lg:sticky lg:top-4 self-start order-first lg:order-last">
               <div className="flex justify-end mb-2">
                 <button
                   onClick={() => setShowClearDialog(true)}
                   disabled={!hasHistory}
-                  className="px-3 py-1.5 rounded-md text-xs font-medium border border-white/10 text-white/80 bg-white/5 hover:bg-white/10 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-2.5 py-1.5 sm:px-3 rounded-md text-xs font-medium border border-white/10 text-white/80 bg-white/5 hover:bg-white/10 transition disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
                   title={t("history.clear", "Clear history")}
                 >
                   {t("history.clear", "Clear history")}
