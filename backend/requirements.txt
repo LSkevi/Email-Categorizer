@@ -1,7 +1,7 @@
-fastapi==0.100.0
-uvicorn[standard]==0.23.0
-google-genai==0.2.2
-pydantic==2.1.1
-pdfminer.six==20220524
-python-multipart==0.0.5
-python-dotenv==0.19.2
+fastapi
+uvicorn
+google-genai
+pydantic
+pdfminer.six
+python-multipart
+python-dotenv
