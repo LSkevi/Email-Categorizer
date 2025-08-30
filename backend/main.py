@@ -24,8 +24,14 @@ GEMINI_MODEL = "gemini-2.5-flash"
 SUPPORTED_FILE_TYPES = {".txt", ".pdf"}
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
 
-# CORS origins - allow all for testing
-CORS_ORIGINS = ["*"]
+# CORS origins - allow Vercel and local development
+CORS_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://email-categorizer.vercel.app",  # Your specific Vercel domain
+    "https://*.vercel.app",  # All Vercel subdomains
+    "*"  # Allow all for testing (remove in production)
+]
 
 # Initialize Gemini client
 try:
