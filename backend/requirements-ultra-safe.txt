@@ -1,7 +1,0 @@
-fastapi
-uvicorn
-google-genai
-pydantic
-pdfminer.six
-python-multipart
-python-dotenv
