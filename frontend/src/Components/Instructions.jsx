@@ -18,7 +18,7 @@ export default function Instructions({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 pt-8 sm:pt-4">
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={handleBackdropClick}
@@ -26,7 +26,7 @@ export default function Instructions({ isOpen, onClose }) {
       <div
         role="dialog"
         aria-modal="true"
-        className="relative z-10 w-full max-w-2xl max-h-[80vh] bg-[#0F172A]/95 backdrop-blur-xl text-white border border-white/20 rounded-2xl shadow-2xl overflow-hidden"
+        className="relative z-10 w-full max-w-2xl max-h-[85vh] sm:max-h-[80vh] bg-[#0F172A]/95 backdrop-blur-xl text-white border border-white/20 rounded-2xl shadow-2xl overflow-hidden mt-4 sm:mt-0"
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-white/10">
@@ -47,7 +47,7 @@ export default function Instructions({ isOpen, onClose }) {
         </div>
 
         {/* Content */}
-        <div className="p-4 overflow-y-auto max-h-[calc(80vh-120px)] space-y-4 text-sm">
+        <div className="p-4 overflow-y-auto max-h-[calc(85vh-120px)] sm:max-h-[calc(80vh-120px)] space-y-4 text-sm scrollbar-thin">
           {/* Main Feature */}
           <div className="bg-white/5 rounded-lg p-3">
             <h4 className="font-medium text-[#38BDF8] mb-2 flex items-center gap-2">

@@ -151,7 +151,7 @@ export default function App() {
 
             {/* Clear history modal */}
             {showClearDialog && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center">
+              <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 pt-20 sm:pt-4">
                 <div
                   className="absolute inset-0 bg-black/50 backdrop-blur-sm"
                   onClick={() => setShowClearDialog(false)}
@@ -159,7 +159,7 @@ export default function App() {
                 <div
                   role="dialog"
                   aria-modal="true"
-                  className="relative z-10 w-full max-w-sm bg-[#0F172A] text-white border border-white/10 rounded-xl p-5 shadow-2xl"
+                  className="relative z-10 w-full max-w-sm bg-[#0F172A] text-white border border-white/10 rounded-xl p-5 shadow-2xl touch-manipulation"
                 >
                   <h3 className="text-lg font-semibold mb-2">
                     {t("history.clearTitle", "Clear history?")}
@@ -173,13 +173,13 @@ export default function App() {
                   <div className="flex justify-end gap-3">
                     <button
                       onClick={() => setShowClearDialog(false)}
-                      className="px-3 py-1.5 rounded-md text-sm bg-white/10 hover:bg-white/15 text-white/90"
+                      className="px-4 py-2.5 rounded-md text-sm bg-white/10 hover:bg-white/15 text-white/90 touch-manipulation min-h-[44px]"
                     >
                       {t("common.cancel", "Cancel")}
                     </button>
                     <button
                       onClick={confirmClearHistory}
-                      className="px-3 py-1.5 rounded-md text-sm bg-red-500/80 hover:bg-red-500 text-white"
+                      className="px-4 py-2.5 rounded-md text-sm bg-red-500/80 hover:bg-red-500 text-white touch-manipulation min-h-[44px]"
                     >
                       {t("history.clear", "Clear history")}
                     </button>
