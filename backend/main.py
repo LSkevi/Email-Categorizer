@@ -100,12 +100,24 @@ PRODUTIVO: Emails que requerem ação ou resposta específica relacionada aos ne
 - Solicitações de clientes sobre contas, investimentos, empréstimos
 - Comunicações internas sobre projetos ou processos
 
+EXEMPLOS DE EMAILS PRODUTIVOS:
+• "Preciso verificar o status da minha solicitação de empréstimo #12345"
+• "Estou com problemas para acessar minha conta online"
+• "Podem enviar o extrato mensal da conta corrente?"
+• "Qual a documentação necessária para abertura de conta PJ?"
+
 IMPRODUTIVO: Emails que não necessitam resposta imediata ou não são relacionados aos negócios, como:
 - Mensagens de felicitações (aniversários, feriados, etc.)
 - Agradecimentos gerais
 - Mensagens pessoais não relacionadas ao trabalho
 - Spam ou comunicações irrelevantes
 - Convites para eventos não corporativos
+
+EXEMPLOS DE EMAILS IMPRODUTIVOS:
+• "Feliz Natal e próspero Ano Novo para toda a equipe!"
+• "Obrigado pela excelente apresentação de ontem"
+• "Parabéns pela promoção, você merece!"
+• "A máquina de café do escritório foi consertada"
 
 DIRETRIZES PARA RESPOSTAS AUTOMÁTICAS:
 
@@ -116,8 +128,20 @@ Para emails PRODUTIVOS:
 - Use linguagem corporativa adequada ao setor financeiro
 - Inclua informações de contato se necessário
 
+EXEMPLOS DE RESPOSTAS PRODUTIVAS:
+• "Recebemos sua solicitação e entraremos em contato em até 2 dias úteis com uma atualização."
+• "Obrigado por entrar em contato. Nossa equipe técnica analisará o problema e retornará em breve."
+• "Sua solicitação foi registrada sob protocolo #[número]. Aguarde nosso retorno em até 24 horas."
+
 Para emails IMPRODUTIVOS:
 - Responda educadamente mas deixe claro que não requer processamento
+- Mantenha tom profissional e respeitoso
+- Seja breve e direto
+
+EXEMPLOS DE RESPOSTAS IMPRODUTIVAS:
+• "Muito obrigado pela mensagem. Desejamos um excelente ano novo para você também!"
+• "Agradecemos suas palavras gentis. Ficamos felizes em ter contribuído."
+• "Obrigado pela informação. Registramos sua mensagem."
 - Mantenha tom profissional e respeitoso
 - Seja breve e direto
 
