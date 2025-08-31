@@ -57,17 +57,25 @@ export default function UploadForm({ setResult }) {
               const errorData = await response.json();
               const validationErrors = errorData.detail;
               let errorMessage = "Validation error";
-              
-              if (Array.isArray(validationErrors) && validationErrors.length > 0) {
+
+              if (
+                Array.isArray(validationErrors) &&
+                validationErrors.length > 0
+              ) {
                 // Extract the validation error message
-                errorMessage = validationErrors[0].msg || validationErrors[0].message || errorMessage;
-              } else if (typeof validationErrors === 'string') {
+                errorMessage =
+                  validationErrors[0].msg ||
+                  validationErrors[0].message ||
+                  errorMessage;
+              } else if (typeof validationErrors === "string") {
                 errorMessage = validationErrors;
               }
-              
+
               throw new Error(errorMessage);
             } catch {
-              throw new Error("Text validation failed. Please check your input length.");
+              throw new Error(
+                "Text validation failed. Please check your input length."
+              );
             }
           }
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -135,13 +143,15 @@ export default function UploadForm({ setResult }) {
       {/* Character counter */}
       {!file && (
         <div className="flex justify-end">
-          <span className={`text-xs ${
-            texto.length > 45000 
-              ? 'text-red-400' 
-              : texto.length > 40000 
-                ? 'text-yellow-400' 
-                : 'text-gray-400'
-          }`}>
+          <span
+            className={`text-xs ${
+              texto.length > 45000
+                ? "text-red-400"
+                : texto.length > 40000
+                ? "text-yellow-400"
+                : "text-gray-400"
+            }`}
+          >
             {texto.length.toLocaleString()} / 50,000 characters
           </span>
         </div>
