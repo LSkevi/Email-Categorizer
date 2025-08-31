@@ -1,6 +1,7 @@
 export default {
   title: "Email Classification System",
-  subtitle: "Automatically classifies emails as Productive or Unproductive using AI",
+  subtitle:
+    "Automatically classifies emails as Productive or Unproductive using AI",
   textarea: "Paste your email text here...",
   fileSelected: "Remove the file to change text",
   buttons: {
