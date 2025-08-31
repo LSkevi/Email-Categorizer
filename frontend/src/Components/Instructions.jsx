@@ -18,7 +18,7 @@ export default function Instructions({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-3 pt-6 sm:pt-8 md:items-center md:pt-4">
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-16">
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={handleBackdropClick}
@@ -26,21 +26,20 @@ export default function Instructions({ isOpen, onClose }) {
       <div
         role="dialog"
         aria-modal="true"
-        className="relative z-10 w-full max-w-2xl max-h-[90vh] sm:max-h-[85vh] md:max-h-[80vh] bg-[#0F172A]/95 backdrop-blur-xl text-white border border-white/20 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden"
+        className="relative z-10 w-full max-w-2xl max-h-[80vh] bg-[#0F172A]/95 backdrop-blur-xl text-white border border-white/20 rounded-2xl shadow-2xl overflow-hidden"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-3 sm:p-4 border-b border-white/10">
+        <div className="flex items-center justify-between p-4 border-b border-white/10">
           <div className="flex items-center gap-3">
             <span className="text-2xl">ℹ️</span>
             <h2 className="text-xl font-semibold">{instructionsTitle}</h2>
           </div>
           <button
             onClick={onClose}
-            className="w-9 h-9 sm:w-8 sm:h-8 flex items-center justify-center
+            className="w-8 h-8 flex items-center justify-center
                      rounded-full bg-white/10 hover:bg-white/20 
                      text-white/70 hover:text-white
-                     transition-all duration-200 hover:scale-105
-                     touch-manipulation"
+                     transition-all duration-200 hover:scale-105"
             aria-label="Close instructions"
           >
             ✕
@@ -48,7 +47,7 @@ export default function Instructions({ isOpen, onClose }) {
         </div>
 
         {/* Content */}
-        <div className="p-3 sm:p-4 overflow-y-auto max-h-[calc(90vh-100px)] sm:max-h-[calc(85vh-120px)] md:max-h-[calc(80vh-120px)] space-y-4 text-sm scrollbar-thin">
+        <div className="p-4 overflow-y-auto max-h-[calc(80vh-120px)] space-y-4 text-sm scrollbar-thin">
           {/* Main Feature */}
           <div className="bg-white/5 rounded-lg p-3">
             <h4 className="font-medium text-[#38BDF8] mb-2 flex items-center gap-2">
