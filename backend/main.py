@@ -62,8 +62,8 @@ class PromptRequest(BaseModel):
     def validate_texto(cls, v):
         if not v or not v.strip():
             raise ValueError("Text cannot be empty")
-        if len(v) > 10000:  # Reasonable limit
-            raise ValueError("Text is too long (max 10000 characters)")
+        if len(v) > 50000:  # Increased limit for long emails
+            raise ValueError("Text is too long (maximum 50,000 characters allowed)")
         return v.strip()
 
 # FastAPI app
