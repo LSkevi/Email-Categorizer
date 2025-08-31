@@ -145,14 +145,14 @@ export default function UploadForm({ setResult }) {
         <div className="flex justify-end">
           <span
             className={`text-xs ${
-              texto.length > 45000
+              texto.length > 1350
                 ? "text-red-400"
-                : texto.length > 40000
+                : texto.length > 1200
                 ? "text-yellow-400"
                 : "text-gray-400"
             }`}
           >
-            {texto.length.toLocaleString()} / 50,000 characters
+            {texto.length.toLocaleString()} / 1,500 characters
           </span>
         </div>
       )}
