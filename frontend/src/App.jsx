@@ -113,9 +113,13 @@ export default function App() {
             </button>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 pb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#38BDF8] to-[#7DD3FC] tracking-tight pr-20 sm:pr-0">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 pb-2 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#38BDF8] to-[#7DD3FC] tracking-tight pr-20 sm:pr-0">
             {t("title")}
           </h1>
+
+          <p className="text-center text-white/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed">
+            {t("subtitle")}
+          </p>
 
           {/* Mobile-first layout: stack on mobile, side-by-side on lg+ */}
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-3 sm:gap-4">

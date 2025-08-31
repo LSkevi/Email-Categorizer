@@ -1,5 +1,6 @@
 export default {
   title: "Sistema de Classificação de Emails",
+  subtitle: "Classifica automaticamente emails como Produtivos ou Improdutivos usando IA",
   textarea: "Cole o texto do email aqui...",
   fileSelected: "Remova o arquivo para alterar o texto",
   buttons: {
