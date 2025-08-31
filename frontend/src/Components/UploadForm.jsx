@@ -125,7 +125,7 @@ export default function UploadForm({ setResult }) {
           value={texto}
           onChange={(e) => (file ? null : setTexto(e.target.value))}
           disabled={loading || file}
-          className={`w-full h-32 bg-white/5 backdrop-blur-sm rounded-xl p-3 
+          className={`w-full h-48 bg-white/5 backdrop-blur-sm rounded-xl p-3 
                    text-white placeholder-gray-400 resize-none outline-none
                    border border-white/10 focus:border-white/20 
                    focus:ring-2 focus:ring-[#38BDF8]/20 transition-all
