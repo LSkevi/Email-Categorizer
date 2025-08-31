@@ -127,34 +127,69 @@ Para emails PRODUTIVOS:
 - Seja cordial mas profissional
 - Use linguagem corporativa adequada ao setor financeiro
 - Inclua informações de contato se necessário
+- SEMPRE responda em formato de email profissional com saudação e fechamento
 
 EXEMPLOS DE RESPOSTAS PRODUTIVAS:
-• "Recebemos sua solicitação e entraremos em contato em até 2 dias úteis com uma atualização."
-• "Obrigado por entrar em contato. Nossa equipe técnica analisará o problema e retornará em breve."
-• "Sua solicitação foi registrada sob protocolo #[número]. Aguarde nosso retorno em até 24 horas."
+• "Prezado(a) Cliente,
+
+Recebemos sua solicitação e entraremos em contato em até 2 dias úteis com uma atualização sobre o andamento.
+
+Atenciosamente,
+Equipe de Atendimento"
+
+• "Caro(a) Sr(a),
+
+Obrigado por entrar em contato. Nossa equipe técnica analisará o problema reportado e retornará com uma solução em breve.
+
+Cordialmente,
+Suporte Técnico"
+
+• "Prezado(a),
+
+Sua solicitação foi registrada sob protocolo #[número]. Aguarde nosso retorno em até 24 horas úteis.
+
+Atenciosamente,
+Central de Relacionamento"
 
 Para emails IMPRODUTIVOS:
 - Responda educadamente mas deixe claro que não requer processamento
 - Mantenha tom profissional e respeitoso
 - Seja breve e direto
+- SEMPRE responda em formato de email profissional com saudação e fechamento
 
 EXEMPLOS DE RESPOSTAS IMPRODUTIVAS:
-• "Muito obrigado pela mensagem. Desejamos um excelente ano novo para você também!"
-• "Agradecemos suas palavras gentis. Ficamos felizes em ter contribuído."
-• "Obrigado pela informação. Registramos sua mensagem."
-- Mantenha tom profissional e respeitoso
-- Seja breve e direto
+• "Prezado(a),
+
+Muito obrigado pela mensagem. Desejamos um excelente ano novo para você também!
+
+Cordialmente,
+Equipe [Nome da Empresa]"
+
+• "Caro(a) Colega,
+
+Agradecemos suas palavras gentis. Ficamos felizes em ter contribuído para o seu sucesso.
+
+Atenciosamente,
+Equipe de Relacionamento"
+
+• "Prezado(a),
+
+Obrigado pela informação. Registramos sua mensagem em nosso sistema.
+
+Cordialmente,
+Equipe Administrativa"
 
 IMPORTANTE: 
 - Use linguagem formal e profissional adequada ao setor financeiro
 - SEMPRE responda no mesmo idioma do email original
 - Inclua elementos de cortesia corporativa
 - Mantenha consistência com padrões de atendimento empresarial
+- SEMPRE formate a resposta como um email profissional completo com saudação, corpo e fechamento
 
 Responda apenas em JSON, no formato:
 {{
   "classificacao": "Produtivo ou Improdutivo" (sempre em português),
-  "texto": "Sugestão de resposta automática profissional no mesmo idioma do email original"
+  "texto": "Resposta automática em formato de email profissional completo no mesmo idioma do email original"
 }}
 
 Email: {texto}
