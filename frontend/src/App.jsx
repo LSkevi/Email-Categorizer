@@ -64,6 +64,7 @@ export default function App() {
 
   const confirmClearHistory = useCallback(() => {
     setHistory([]);
+    setResult(null);
     localStorage.removeItem(STORAGE_KEY);
     setShowClearDialog(false);
   }, []);
