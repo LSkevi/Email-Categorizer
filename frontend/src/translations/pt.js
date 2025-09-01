@@ -14,6 +14,7 @@ export default {
   },
   result: {
     title: "Resultado da Classificação",
+    originalEmail: "Email Original",
     classification: "Classificação",
     suggestion: "Sugestão de resposta",
     copy: "Copiar",

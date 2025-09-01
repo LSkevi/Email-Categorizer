@@ -68,6 +68,26 @@ export default function EmailResult({ result }) {
       </h2>
 
       <div className="space-y-4">
+        {/* Original Email Section */}
+        <div className="relative group bg-white/5 p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-all duration-300">
+          <div className="flex justify-between items-center mb-1">
+            <p className="text-sm font-medium text-gray-400 uppercase tracking-wide">
+              {t("result.originalEmail", "Original Email")}
+            </p>
+            <button
+              onClick={() => handleCopy(result.originalTexto)}
+              className="opacity-0 group-hover:opacity-100 transition-opacity px-3 py-1 rounded-lg text-xs font-semibold bg-blue-500/20 text-blue-400 hover:bg-blue-500/30"
+            >
+              {copied ? t("result.copied") : t("result.copy")}
+            </button>
+          </div>
+          <div className="max-h-48 overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
+            <p className="text-base text-white/90 leading-relaxed whitespace-pre-wrap font-normal">
+              {result.originalTexto}
+            </p>
+          </div>
+        </div>
+
         <div className="bg-white/5 p-4 rounded-xl border border-white/5 hover:bg-white/10 transition-all duration-300">
           <div className="flex justify-between items-center mb-1">
             <p className="text-sm font-medium text-gray-400 uppercase tracking-wide">
